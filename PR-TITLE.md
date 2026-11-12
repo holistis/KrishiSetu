@@ -1,1 +1,0 @@
-Add branded favicon and icon metadata for KrishiSetu
