@@ -20,7 +20,7 @@ const app = express();
 app.use(
   helmet({
     crossOriginEmbedderPolicy: false,
-
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
     crossOriginResourcePolicy: {
       policy: "cross-origin",
     },
@@ -35,6 +35,7 @@ app.use(
                 "'self'",
                 "https://www.gstatic.com",
                 "https://www.googleapis.com",
+                "https://apis.google.com",
               ],
 
               styleSrc: [
@@ -60,6 +61,13 @@ app.use(
                 "https://firestore.googleapis.com",
                 "https://identitytoolkit.googleapis.com",
                 "https://securetoken.googleapis.com",
+                "https://*.firebaseio.com",
+                "https://*.firebaseapp.com",
+              ],
+
+              frameSrc: [
+                "'self'",
+                "https://*.firebaseapp.com",
               ],
 
               objectSrc: ["'none'"],
